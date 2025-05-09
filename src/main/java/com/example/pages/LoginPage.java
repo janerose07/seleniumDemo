@@ -9,6 +9,7 @@ public class LoginPage extends BasePage {
     private final By passwordField = By.id("password");
     private final By loginButton = By.id("login-button");
     private final By errorMessage = By.className("error-message");
+    private final By schemaButton = By.xpath("//span[contains(text(),'Schemas')]");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -42,5 +43,9 @@ public class LoginPage extends BasePage {
         enterUsername(username);
         enterPassword(password);
         clickLoginButton();
+    }
+
+    public void clickSchemaButton(){
+        clickElement(schemaButton);
     }
 }
